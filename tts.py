@@ -6,7 +6,7 @@ import os
 from PIL import Image	 
 
 # converts the text to speech 
-import pyttsx3		 
+# import pyttsx3		 
 
 #translates into the mentioned language 
 from googletrans import Translator	 

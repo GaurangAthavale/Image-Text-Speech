@@ -9,11 +9,11 @@
         <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
             <a class="navbar-brand" href="/">Image-Text-Speech</a>
         </nav>
-        <form action="/show" method = "POST">
+        <form action="/show" method = "POST" enctype=multipart/form-data>
         <div class="booking-form">
         <label for="img">Choose the image for extracting the text</label>
         <input type="file" class="form-control" name="img" id="img" accept="image/*">
-        <input type="text" name="name">
+        <!-- <input type="text" name="name"> -->
         <div class="input-grp">
             <button id="button" class="form-control" type="submit">Show Text</button>
         </div>

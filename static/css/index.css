@@ -1,0 +1,31 @@
+html, body{
+    min-height: 100%;
+}
+
+body{
+    background: #93A9FF;
+    text-align: center;
+    padding: 0;
+    /*font-size: 1vw;*/
+    font-size: 20px;
+}
+
+.booking-form label{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #000;
+}
+
+.input-grp{
+    width: 229px;
+    display: inline-block;
+    margin-left: 0%
+}
+
+.form-control{
+     font-size: 20px; 
+    /* border-radius: 0; */
+    background: transparent;
+    border-color: #000;
+}

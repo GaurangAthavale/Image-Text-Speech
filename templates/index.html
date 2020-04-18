@@ -2,22 +2,49 @@
     <head>
         <title>Image-Text-Speech</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-        <script src="{{ url_for('static', filename='js/save.js') }}"></script>
+        <!-- <script src="{{ url_for('static', filename='js/save.js') }}"></script> -->
+        <link rel="manifest" href="./manifest.json">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- <script src="/js/app.js"></script> -->
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <meta name = "viewport" content="width-device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#FFE1C4">
+        <link rel="apple-touch-icon" href="./static/images/icon-512x512.png">
+        <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
     </head>
-    <body>
+    <body style="background-color: #F4E1F4;">
         <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
             <a class="navbar-brand" href="/">Image-Text-Speech</a>
         </nav>
         <form action="/show" method = "POST" enctype=multipart/form-data>
+        <div class="container" align="center">
+            <br>
+            <br>
         <div class="booking-form">
-        <label for="img">Choose the image for extracting the text</label>
-        <input type="file" class="form-control" name="img" id="img" accept="image/*">
+        <label>Choose the image for extracting the text</label>
+        <br>
+        <input type="file" name="img" id="img" accept="image/*">
+    </div>
         <!-- <input type="text" name="name"> -->
+        <br>    
         <div class="input-grp">
-            <button id="button" class="form-control" type="submit">Show Text</button>
+            <button id="button" class="form-control" type="submit" style="background-color: aqua;">Show Text</button>
         </div>
         </div>
         </form>
+        <form action="/voice" method = "POST" enctype=multipart/form-data>
+            <div class="container" align="center">
+            <div class="booking-form">
+            <label>Choose the image for converting to speech</label>
+            <br>
+            <input type="file" name="img" id="img" accept="image/*">
+        </div>
+        <br>
+            <!-- <input type="text" name="name"> -->
+            <div class="input-grp">
+                <button id="button" class="form-control" style="background-color: aqua;" type="submit">Convert to Speech</button>
+            </div>
+            </div>
+            </form>
     </body>
 </html>

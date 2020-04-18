@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
-from tts import text2
+from tts import text2, voice2
 import os
 
 app = Flask(__name__)
@@ -29,6 +29,19 @@ def text1():
         print(str(file))
         text = text2(file)
         return render_template('index1.html', text_image = text)
+
+@app.route('/voice',methods = ['GET','POST'])
+def voice():
+    if request.method == 'POST':
+        # name = request.form['name']
+        # print(name)
+        file = request.files['img']
+        voice1 = voice2(file)
+        return render_template('voice.html', audios = voice1)
+
+@app.route('/<path:path>')
+def send_js(path):
+    return send_from_directory('.', path)
 
 if __name__ == '__main__':
     app.run(debug = True)

@@ -1,0 +1,17 @@
+<!-- <script>
+    var image_src = {{ audio }}
+</script> -->
+
+<html>
+    <head>
+        <link rel="manifest" href="./manifest.json">
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <meta name="theme-color" content="#FFE1C4">
+    </head>
+    <div class="container">
+    <audio controls>
+        <!-- {% set path = audio %} -->
+        <source src = "{{ url_for('static', filename='audio/'+audios) }}" type="audio/mpeg">
+    </audio>
+    </div>
+</html>

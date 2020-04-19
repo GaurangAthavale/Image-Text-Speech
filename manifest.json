@@ -9,7 +9,6 @@
     "orientation": "portrait-primary",
     "icons": [
             {
-<<<<<<< HEAD
               "src": "/static/images/72x72.png",
               "type": "image/png",
               "sizes": "72x72"
@@ -37,35 +36,6 @@
             {
               "src": "/static/images/192x192.png",
               "type": "image/png",
-=======
-              "src": "/static/images/icon-72x72.jpg",
-              "type": "image/jpg",
-              "sizes": "72x72"
-            },
-            {
-              "src": "/static/images/icon-96x96.jpg",
-              "type": "image/jpg",
-              "sizes": "96x96"
-            },
-            {
-              "src": "/static/images/icon-128x128.jpg",
-              "type": "image/jpg",
-              "sizes": "128x128"
-            },
-            {
-              "src": "/static/images/icon-144x144.jpg",
-              "type": "image/jpg",
-              "sizes": "144x144"
-            },
-            {
-              "src": "/static/images/icon-152x152.jpg",
-              "type": "image/jpg",
-              "sizes": "152x152"
-            },
-            {
-              "src": "/static/images/icon-192x192.jpg",
-              "type": "image/jpg",
->>>>>>> 21896b3022d28a7c5866e1289facdaf274bfdda3
               "sizes": "192x192"
             },
             {
@@ -74,12 +44,8 @@
               "sizes": "384x384"
             },
             {
-<<<<<<< HEAD
-              "src": "/static/images/512-513.jpg",
-=======
-              "src": "/static/images/icon-512x512.jpg",
->>>>>>> 21896b3022d28a7c5866e1289facdaf274bfdda3
-              "type": "image/jpg",
+              "src": "/static/images/512x512.png",
+              "type": "image/png",
               "sizes": "512x512"
             }
     ],

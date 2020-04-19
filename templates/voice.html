@@ -2,7 +2,7 @@
     var image_src = {{ audio }}
 </script> -->
 
-<html>
+<!-- <html>
     <head>
         <link rel="manifest" href="./manifest.json">
         <script src="{{ url_for('static', filename='js/app.js') }}"></script>
@@ -10,8 +10,121 @@
     </head>
     <div class="container">
     <audio controls>
-        <!-- {% set path = audio %} -->
         <source src = "{{ url_for('static', filename='audio/'+audios) }}" type="audio/mpeg">
     </audio>
     </div>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VISION</title>
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="manifest" href="./manifest.json">
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <meta name="theme-color" content="#FFE1C4">
+    <link rel="apple-touch-icon" href="./static/images/icon-512x512.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+    <link href='https://fonts.googleapis.com/css?family=Cambo' rel='stylesheet'>
+    <style>
+        *
+        {
+            font-family: 'Cambo';
+        }
+        ul {
+            text-align: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            color: white;
+        }
+        p>audio,
+        p>video,
+        p>img{
+            max-width:75%;
+            max-height: 50%;
+        }
+
+        .container
+        {
+            width:25%;
+            height:95%;
+            height: auto;
+            margin-top: 6%;
+            margin-bottom: 10%; 
+            border-style: solid;
+            background: #D3D3D3;
+        }
+
+        #convert
+        {
+            width:99%;
+            height: 35px;
+            border-radius: 10px;
+
+        }
+
+        #capture
+        {
+            width:350px;
+            height: 35px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+    <header>
+        <ul style="width:100%;">
+            <li><h1>VISION</h1></li>
+        </ul>
+    </header>
+    <main>
+        {% if path1 %}
+        <h2 style="text-align:'centre';" ><b>Selected image: </b></h2>
+        <p><img src="{{ path1 }}" id="img" alt="The loaded image will be displayed here"/></p>
+        {% endif %}
+        <h2 style="text-align:'centre';" ><b>Audio of the selected image: </b></h2>
+        <div align="center">
+            <audio controls>
+                <source src = "{{ url_for('static', filename='audio/'+audios) }}" type="audio/mpeg">
+            </audio>
+        </div>  
+        <br>
+    </main> 
+    </div>   
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', (ev)=>{
+            let form = document.getElementById('myform');
+            //get the captured media file
+            let input = document.getElementById('capture');
+            
+            input.addEventListener('change', (ev)=>{
+                console.dir( input.files[0] );
+                if(input.files[0].type.indexOf("image/") > -1){
+                    let img = document.getElementById('img');
+                    img.src = window.URL.createObjectURL(input.files[0]);
+                }
+                else if(input.files[0].type.indexOf("audio/") > -1 ){
+                    let audio = document.getElementById('audio');
+                    audio.src = window.URL.createObjectURL(input.files[0]);
+                }
+                else if(input.files[0].type.indexOf("video/") > -1 ){
+                    let video = document.getElementById('video');
+                    video.src=window.URL.createObjectURL(input.files[0]);
+                }
+                
+                
+            })
+            
+        })
+    </script>
+</body>
 </html>

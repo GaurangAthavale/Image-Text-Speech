@@ -1,15 +1,10 @@
-<!-- youtube video reffered:-
-https://www.youtube.com/watch?v=dbrez37HlJM -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>VISION</title>
-    <!-- <meta name="viewport" content="width=device-width"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">
     <link rel="manifest" href="./manifest.json">
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <meta name="theme-color" content="#FFE1C4">
@@ -60,7 +55,6 @@ https://www.youtube.com/watch?v=dbrez37HlJM -->
         {
             width:350px;
             height: 35px;
-            /* border-radius: 10px; */
         }
     </style>
 </head>
@@ -71,40 +65,31 @@ https://www.youtube.com/watch?v=dbrez37HlJM -->
             <li><h1>VISION</h1></li>
         </ul>
     </header>
+    <br>
     <main>
         <h2 style="text-align:'centre';" >Image to Text Conversion</h2>
         <form action="/show" method = "POST" id = "myform" enctype="multipart/form-data">
-            <!-- <label for="capture" style="font-family: 'Cambo'">Capture Media</label> -->
             <br>    
             <input type="file" id="capture" name="img" accept="image/*"/>
             <br>
             <p><img src="" id="img" alt="The loaded image will be displayed here"/></p>
             <br>
-            <!-- <input id="convert" style="font-family: 'Cambo'; font-size: 20px;" type="submit" value="Convert" /> -->
-            <div class="input-grp">
-                <button id="button" class="form-control" type="submit" style="width: 50%;">Show Text</button>
+            <div class="input-grp" align = "center">
+                <button id="button" class="form-control"  type="submit" style="width: 50%; background-color: #333; color : #fff;">Show Text</button>
             </div>
         </form>
-        <br>
+        <br><br><br>
         <h2 style="text-align:'centre';" >Image to Speech Conversion</h2>
         <form action="/voice" method = "POST" id = "myform1" enctype="multipart/form-data">
-            <!-- <label for="capture" style="font-family: 'Cambo'">Capture Media</label> -->
             <br>    
             <input type="file" id="capture1" name="img" accept="image/*"/>
             <br>
             <p><img src="" id="img1" alt="The loaded image will be displayed here"/></p>
             <br>
-            <!-- <input id="convert" style="font-family: 'Cambo'; font-size: 20px;" type="submit" value="Convert" /> -->
-            <div class="input-grp">
-                <button id="button" class="form-control" type="submit" style="width: 50%;">Convert to Speech</button>
+            <div class="input-grp" align = "center">
+                <button id="button" class="form-control" type="submit" style="width: 50%; background-color: #333; color : #fff;">Convert to Speech</button>
             </div>
         </form>
-        <!-- <p>
-            <audio src="" id="audio" controls></audio>
-        </p>
-        <p>
-            <video src="" id="video" controls></video>
-        </p> -->
     </main> 
     </div>   
     <script>
@@ -120,15 +105,6 @@ https://www.youtube.com/watch?v=dbrez37HlJM -->
                     let img = document.getElementById('img');
                     img.src = window.URL.createObjectURL(input.files[0]);
                 }
-                else if(input.files[0].type.indexOf("audio/") > -1 ){
-                    let audio = document.getElementById('audio');
-                    audio.src = window.URL.createObjectURL(input.files[0]);
-                }
-                else if(input.files[0].type.indexOf("video/") > -1 ){
-                    let video = document.getElementById('video');
-                    video.src=window.URL.createObjectURL(input.files[0]);
-                }
-                
                 
             });
             
@@ -144,16 +120,7 @@ https://www.youtube.com/watch?v=dbrez37HlJM -->
                 if(input.files[0].type.indexOf("image/") > -1){
                     let img = document.getElementById('img1');
                     img.src = window.URL.createObjectURL(input.files[0]);
-                }
-                else if(input.files[0].type.indexOf("audio/") > -1 ){
-                    let audio = document.getElementById('audio');
-                    audio.src = window.URL.createObjectURL(input.files[0]);
-                }
-                else if(input.files[0].type.indexOf("video/") > -1 ){
-                    let video = document.getElementById('video');
-                    video.src=window.URL.createObjectURL(input.files[0]);
-                }
-                
+                }              
                 
             })
             

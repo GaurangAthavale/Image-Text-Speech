@@ -1,20 +1,3 @@
-<!-- <script>
-    var image_src = {{ audio }}
-</script> -->
-
-<!-- <html>
-    <head>
-        <link rel="manifest" href="./manifest.json">
-        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-        <meta name="theme-color" content="#FFE1C4">
-    </head>
-    <div class="container">
-    <audio controls>
-        <source src = "{{ url_for('static', filename='audio/'+audios) }}" type="audio/mpeg">
-    </audio>
-    </div>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +6,6 @@
     <!-- <meta name="viewport" content="width=device-width"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">
     <link rel="manifest" href="./manifest.json">
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <meta name="theme-color" content="#FFE1C4">
@@ -111,16 +93,7 @@
                 if(input.files[0].type.indexOf("image/") > -1){
                     let img = document.getElementById('img');
                     img.src = window.URL.createObjectURL(input.files[0]);
-                }
-                else if(input.files[0].type.indexOf("audio/") > -1 ){
-                    let audio = document.getElementById('audio');
-                    audio.src = window.URL.createObjectURL(input.files[0]);
-                }
-                else if(input.files[0].type.indexOf("video/") > -1 ){
-                    let video = document.getElementById('video');
-                    video.src=window.URL.createObjectURL(input.files[0]);
-                }
-                
+                }             
                 
             })
             

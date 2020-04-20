@@ -39,8 +39,8 @@
               "sizes": "192x192"
             },
             {
-              "src": "/static/images/icon-384x384.jpg",
-              "type": "image/jpg",
+              "src": "/static/images/384x384.png",
+              "type": "image/png",
               "sizes": "384x384"
             },
             {

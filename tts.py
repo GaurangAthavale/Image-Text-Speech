@@ -21,7 +21,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def text2(image):
     print(image)
     img = Image.open(image)	
-    pytesseract.pytesseract.tesseract_cmd = r'/app/.apt/usr/bin/tesseract'
+    pytesseract.pytesseract.tesseract_cmd = r'/app/.apt/usr/bin/tesseract.exe'
     text = pytesseract.image_to_string(img)
     # print(text.split("\n"))
     text = text.split("\n")

@@ -21,7 +21,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def text2(image):
     print(image)
     img = Image.open(image)	
-    pytesseract.pytesseract.tesseract_cmd = r'C:/Users/HP/AppData/Local/Tesseract-OCR/tesseract.exe'
+    pytesseract.pytesseract.tesseract_cmd = r'/app/.apt/usr/bin/tesseract'
     text = pytesseract.image_to_string(img)
     # print(text.split("\n"))
     text = text.split("\n")
@@ -29,7 +29,7 @@ def text2(image):
 
 def voice2(image):
     img = Image.open(image)	
-    pytesseract.pytesseract.tesseract_cmd = r'C:/Users/HP/AppData/Local/Tesseract-OCR/tesseract.exe'
+    pytesseract.pytesseract.tesseract_cmd = r'/app/.apt/usr/bin/tesseract'
     text = pytesseract.image_to_string(img)
     print(text)
     language = 'en'
